@@ -1,0 +1,54 @@
+{
+  "name": "learn_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "eslint-scope": "^5.1.1",
+    "events": "^3.3.0",
+    "estraverse": "^4.3.0",
+    "fast-deep-equal": "^3.1.3",
+    "fastest-levenshtein": "^1.0.12",
+    "fast-json-stable-stringify": "^2.1.0",
+    "function-bind": "^1.1.1",
+    "get-stream": "^6.0.1",
+    "glob-to-regexp": "^0.4.1",
+    "graceful-fs": "^4.2.8",
+    "has": "^1.0.3",
+    "has-flag": "^4.0.0",
+    "he": "^1.2.0",
+    "human-signals": "^2.1.0",
+    "htmlparser2": "^6.1.0",
+    "icss-utils": "^5.1.0",
+    "interpret": "^2.2.0",
+    "is-core-module": "^2.6.0",
+    "is-stream": "^2.0.1",
+    "isexe": "^2.0.0",
+    "isobject": "^3.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "lodash": "^4.17.21",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laylooo/learn_webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laylooo/learn_webpack/issues"
+  },
+  "homepage": "https://github.com/Laylooo/learn_webpack#readme"
+}
