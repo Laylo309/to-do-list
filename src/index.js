@@ -1,4 +1,5 @@
-import _ from 'lodash';
+/*eslint-disable*/
+import _ from 'lodash'; /*eslint-disable*/
 import './style.css';
 
 const tasksList = [
@@ -24,13 +25,12 @@ const tasksList = [
   },
 ];
 
-
 const checkTasks = () => {
-  const ul = document.querySelector('ul')
-  for(let i = 0; i < tasksList.length; i+=1) {
+  const ul = document.querySelector('ul');
+  for (let i = 0; i < tasksList.length; i += 1) {
     tasksList[i].index = i;
     ul.innerHTML += `<li><input type="checkbox"><h3>${tasksList[i].description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`;
   }
 };
 
-checkTasks()
+checkTasks();

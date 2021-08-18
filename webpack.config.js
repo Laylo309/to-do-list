@@ -5,12 +5,11 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-
   },
   // devtool: 'inline-source-map',
   // devServer: {
-	//      contentBase: './dist',
-	//  },
+  //      contentBase: './dist',
+  //  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -34,6 +33,6 @@ module.exports = {
     ],
   },
   resolve: {
-	extensions: [ '.js', '.jsx']
- },
+    extensions: ['.js', '.jsx'],
+  },
 };
