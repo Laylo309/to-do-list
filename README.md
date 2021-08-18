@@ -2,7 +2,7 @@
 
 # TODO list 
 
-> This repository is about an example of how to build your own JavaScript application using Local Storage to save data in your browser.
+> This repository is about an example of how to build your own JavaScript application using Webpack environment.
 
 ## Live Demo 
 
