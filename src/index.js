@@ -23,7 +23,7 @@ const checkInput = () => {
       }
       newData.push(data[i]);
     }
-   
+
     localStorage.setItem('data', JSON.stringify(allTasks.allTasks));
   }
 };
