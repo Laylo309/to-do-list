@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.2.0",
+    "hint": "^6.1.4",
     "html-webpack-plugin": "^5.3.2",
     "lodash": "^4.17.21",
     "style-loader": "^3.2.1",
