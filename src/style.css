@@ -91,3 +91,12 @@ ul {
   width: 480px;
   margin: auto;
 }
+
+#addButton {
+  background: url("https://img.icons8.com/ios/20/000000/enter-2.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  width: 35px;
+  border:none;
+  height: 35px;
+}
