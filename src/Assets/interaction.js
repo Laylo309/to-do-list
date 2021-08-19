@@ -32,13 +32,11 @@ export default class Interaction {
     const checklists = document.getElementById(task.index);
     checklists.addEventListener('change', () => {
       task.completed = !task.completed;
-      //  const descript = document.getElementById(`d${task.index}`);
-      //  descript.classList.toggle('line');
     });
   }
 
   static checkList() {
-    const storage = this.localStorage;
+    const storage = this.localStorageA();
     if (storage) {
       this.HandleData();
     }
@@ -48,7 +46,7 @@ export default class Interaction {
     const test = 'test';
     try {
       localStorage.setItem('test', test);
-      localStorage.removeItem('test');
+      localStorage.removeItem(test);
       return true;
     } catch (error) {
       return false;
@@ -56,6 +54,6 @@ export default class Interaction {
   }
 
   static HandleData() {
-    localStorage.setItem('test', JSON.stringify(allTasks.allTasks));
+    localStorage.setItem('data', JSON.stringify(allTasks.allTasks));
   }
 }
