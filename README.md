@@ -33,12 +33,6 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - IDE to edit and run the code (I use Visual Studio Code 🔥).
-
-### Usage
-
-- For anyone who wants to practice JavaScript.
-- How to use Local Storage for your applications.
-
 ## Author
 
 👤 **Laylo Khodjaeva**
