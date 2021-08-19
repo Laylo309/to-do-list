@@ -1,5 +1,5 @@
-import Task from './task';
-import allTasks from './allTasks';
+import Task from './task.js';
+import allTasks from './allTasks.js';
 
 export default class Interaction {
   static addTask() {
@@ -14,7 +14,10 @@ export default class Interaction {
 
   static updateList(task) {
     const ul = document.querySelector('ul');
-    ul.insertAdjacentHTML('beforeend',`<li><input type="checkbox" id="${task.index}"><h3  id="d${task.index}">${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`);
+    ul.insertAdjacentHTML(
+      'beforeend',
+      `<li><input type="checkbox" id="${task.index}"><h3  id="d${task.index}">${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`
+    );
     this.addCheckListEvent(task);
   }
 
