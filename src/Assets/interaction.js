@@ -16,7 +16,7 @@ export default class Interaction {
     const ul = document.querySelector('ul');
     ul.insertAdjacentHTML(
       'beforeend',
-      `<li><input type="checkbox" id="${task.index}"><h3  id="d${task.index}">${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`
+      `<li><input type="checkbox" id="${task.index}"><h3  id="d${task.index}">${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`,
     );
     this.addCheckListEvent(task);
   }
@@ -24,14 +24,13 @@ export default class Interaction {
   static hasValue(input) {
     if (input === '') {
       return false;
-    } else {
-      return true;
     }
+    return true;
   }
 
   static addCheckListEvent(task) {
-    const checklists = getElementById(task.index);
-    checklists.addCheckListEvent('change', () => {
+    const checklists = document.getElementById(task.index);
+    checklists.addEventListener('change', () => {
       task.completed = !task.completed;
       const descript = document.getElementById(`d${task.index}`);
       descript.classList.toggle('line');
