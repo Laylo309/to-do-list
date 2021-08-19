@@ -32,8 +32,8 @@ export default class Interaction {
     const checklists = document.getElementById(task.index);
     checklists.addEventListener('change', () => {
       task.completed = !task.completed;
-      const descript = document.getElementById(`d${task.index}`);
-      descript.classList.toggle('line');
+      //  const descript = document.getElementById(`d${task.index}`);
+      //  descript.classList.toggle('line');
     });
   }
 
