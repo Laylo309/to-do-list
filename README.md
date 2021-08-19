@@ -24,7 +24,8 @@ To get a local copy up and running follow these simple example steps.
 - Clone this project by the command `https://github.com/Laylooo/to-do-list.git`
 - `Cd to-do-list` folder
 - Open `index.html` from `src` folder in your local browser or using Live Server in Visual Studio Code.
-
+- To install this project run `npm install`.
+- To run the project use the command `npm start`
 ## Getting Started
 
 - I have used HTML CSS and JavaScript in the webpack environment.
