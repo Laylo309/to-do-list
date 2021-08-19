@@ -14,9 +14,15 @@ export default class Interaction {
 
   static updateList(task) {
     const ul = document.querySelector('ul');
+    let checked = '';
+    let style = '';
+    if (task.completed) {
+      checked = 'checked';
+      style = 'class="line"';
+    }
     ul.insertAdjacentHTML(
       'beforeend',
-      `<li><input type="checkbox" id="${task.index}"><h3  id="d${task.index}">${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`,
+      `<li><input type="checkbox" id="${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} >${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`,
     );
     this.addCheckListEvent(task);
   }
@@ -32,12 +38,15 @@ export default class Interaction {
     const checklists = document.getElementById(task.index);
     checklists.addEventListener('change', () => {
       task.completed = !task.completed;
+      const descript = document.getElementById(`d${task.index}`);
+      this.checkList();
+      descript.classList.toggle('line');
     });
   }
 
   static checkList() {
-    const storage = this.localStorageA();
-    if (storage) {
+    const storageA = this.localStorageA();
+    if (storageA) {
       this.HandleData();
     }
   }
@@ -45,7 +54,6 @@ export default class Interaction {
   static localStorageA() {
     const test = 'test';
     try {
-      localStorage.setItem('test', test);
       localStorage.removeItem(test);
       return true;
     } catch (error) {

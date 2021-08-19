@@ -100,3 +100,7 @@ ul {
   border: none;
   height: 35px;
 }
+
+.line {
+text-decoration: line-through;
+}
