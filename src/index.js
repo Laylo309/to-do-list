@@ -1,36 +1,31 @@
 /*eslint-disable*/
 import _ from 'lodash'; /*eslint-disable*/
 import './style.css';
+import Interaction from './Assets/interaction.js';
+import allTasks from './Assets/allTasks.js';
 
-const tasksList = [
-  {
-    description: 'Do homework',
-    completed: false,
-    index: null,
-  },
-  {
-    description: 'Attend Microverse classes',
-    completed: false,
-    index: null,
-  },
-  {
-    description: 'Wash dishes',
-    completed: false,
-    index: null,
-  },
-  {
-    description: 'Do my bed',
-    completed: false,
-    index: null,
-  },
-];
+document.querySelector('#addButton').addEventListener('click', () => {
+  Interaction.addTask();
+});
 
-const checkTasks = () => {
-  const ul = document.querySelector('ul');
-  for (let i = 0; i < tasksList.length; i += 1) {
-    tasksList[i].index = i;
-    ul.innerHTML += `<li><input type="checkbox"><h3>${tasksList[i].description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`;
+document.querySelector('#formText').addEventListener('submit', () => {
+  Interaction.addTask();
+});
+
+const checkInput = () => {
+  const data = JSON.parse(localStorage.getItem('data'));
+  let newData = [];
+  if (data !== null) {
+    allTasks.startTasks(data);
+    for (let i = 0; i < data.length; i += 1) {
+      if (Interaction.hasValue(data[i])) {
+        Interaction.updateList(data[i]);
+      }
+      newData.push(data[i]);
+    }
+
+    localStorage.setItem('data', JSON.stringify(allTasks.allTasks));
   }
 };
 
-checkTasks();
+checkInput();
