@@ -22,7 +22,7 @@ export default class Interaction {
     }
     ul.insertAdjacentHTML(
       'beforeend',
-      `<li><input type="checkbox" id="${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} >${task.description}</h3><img src="https://img.icons8.com/ios-glyphs/30/000000/menu-2.png"/></li>`,
+      `<li><input type="checkbox" id="${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} >${task.description}</h3><img src="https://img.icons8.com/ios/25/000000/delete--v1.png"/></li>`,
     );
     this.addCheckListEvent(task);
   }
