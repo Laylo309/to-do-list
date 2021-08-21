@@ -105,8 +105,8 @@ ul {
   text-decoration: line-through;
 }
 
-#threeDots {
-  background-image: url('https://img.icons8.com/ios-glyphs/30/000000/menu-2.png');
+#editButton {
+  background-image: url('https://img.icons8.com/ios/25/000000/edit-column.png');
   background-repeat: no-repeat;
   background-position: center;
   width: 35px;
@@ -115,7 +115,7 @@ ul {
   background-color: #fff;
 }
 
-.deleteButton{
+.deleteButton {
   background-image: url('https://img.icons8.com/fluency-systems-regular/30/000000/delete.png');
   background-repeat: no-repeat;
   background-position: center;

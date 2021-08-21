@@ -5,13 +5,13 @@ import { CRUD } from './Assets/CRUD.js';
 
 const taskContainer = document.getElementById('task-container');
 const submitButton = document.getElementById('addButton');
+// const removeButton = docu
+
 window.onload = function windowReady() {
+  CRUD.showTask();
   submitButton.onclick = function () {
     CRUD.createTask();
-    
-  }; 
-
-
+  };
   taskContainer.addEventListener('click', (e) => {
     if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
       if (e.target.className === 'checkbox-class') {
@@ -30,11 +30,9 @@ window.onload = function windowReady() {
           }
           CRUD.updateTask(data);
         }
-        console.log(data[index].completed);
       }
     }
   });
- 
 };
 
-CRUD.showTask();
+

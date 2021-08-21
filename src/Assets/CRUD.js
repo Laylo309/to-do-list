@@ -1,4 +1,5 @@
-export class CRUD {
+/*eslint-disable*/
+export  class CRUD {
   static createTask() {
     const inputData = document.getElementById('inputText').value;
     console.log(inputData);
@@ -16,41 +17,24 @@ export class CRUD {
   }
 
   static showTask() {
-    const ul = document.querySelector('ul');
-    ul.innerHTML = `  <li class="input">
-    <h2 onchange="">Today's To Do</h2>
-    <img
-      src="https://img.icons8.com/windows/32/000000/synchronize.png"
-      alt="synchronize-button"
-    />
-  </li>
-  <li class="input2">
-    <form class="input"  id="formText" action="#">
-      <input
-        type="text"
-        id="inputText"
-        placeholder="Add to your list..."
-      >
-      <button type="button" id="addButton"></button>
-    </form>
-  </li>`;
+    const div = document.querySelector('#todo-container');
+    div.innerHTML = '';
     this.getAllTasks().forEach((task) => {
       let checked = '';
-    let style = '';
-    let styleDescription = '';
+      let style = '';
+      let styleDescription = '';
       if (task.completed) {
         styleDescription = 'style="text-decoration: line-through"';
         checked = 'checked';
         style = 'class="line"';
       }
-      ul.innerHTML += `<li><input class="checkbox-class" type="checkbox" id="checkbox-${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} ${styleDescription} >${task.description}</h3><button type="button" id="threeDots"></button><button type="button" class="deleteButton" id="${task.index}"></button></li>`;
+      div.innerHTML += `<li><input class="checkbox-class" type="checkbox" id="checkbox-${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} ${styleDescription} >${task.description}</h3><button type="button" id="editButton"></button><button type="button" class="deleteButton" id="${task.index}"></button></li>`;
     });
   }
 
   static removeTask(index) {
     if (index > -1) {
-      let newData;
-      newData = this.getAllTasks();
+      const newData = this.getAllTasks();
       newData.splice(index, 1);
       for (let i = index; i < this.getAllTasks().length - 1; i += 1) {
         newData[i].index = String(i, 10);
@@ -64,7 +48,7 @@ export class CRUD {
     if (this.getAllTasks().length !== 0) {
       localStorage.setItem(
         'data',
-        JSON.stringify(this.getAllTasks().concat(todo))
+        JSON.stringify(this.getAllTasks().concat(todo)),
       );
     } else {
       localStorage.setItem('data', JSON.stringify(todo));
