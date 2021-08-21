@@ -105,7 +105,7 @@ ul {
   text-decoration: line-through;
 }
 
-#editButton {
+.editButton {
   background-image: url('https://img.icons8.com/ios/25/000000/edit-column.png');
   background-repeat: no-repeat;
   background-position: center;

@@ -11,11 +11,6 @@ export  class CRUD {
     saveData.reset();
   }
 
-  static updateTask(newDatas) {
-    localStorage.clear();
-    localStorage.setItem('data', JSON.stringify(newDatas));
-  }
-
   static showTask() {
     const div = document.querySelector('#todo-container');
     div.innerHTML = '';
@@ -23,12 +18,13 @@ export  class CRUD {
       let checked = '';
       let style = '';
       let styleDescription = '';
+      const styleText='style="display:none"';
       if (task.completed) {
         styleDescription = 'style="text-decoration: line-through"';
         checked = 'checked';
         style = 'class="line"';
       }
-      div.innerHTML += `<li><input class="checkbox-class" type="checkbox" id="checkbox-${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} ${styleDescription} >${task.description}</h3><button type="button" id="editButton"></button><button type="button" class="deleteButton" id="${task.index}"></button></li>`;
+      div.innerHTML += `<li><input class="checkbox-class" type="checkbox" id="checkbox-${task.index}" ${checked} /> <h3  id="d${task.index}" ${style} ${styleDescription} >${task.description}</h3><input class="edit-class" type="text" value="${task.description}" id="edit-${task.index}" ${styleText}/><button type="button" id="editBttn-${task.index}" class="editButton"></button><button type="button" class="deleteButton" id="delete-${task.index}"></button></li>`;
     });
   }
 
@@ -43,6 +39,8 @@ export  class CRUD {
       this.showTask();
     }
   }
+
+	
 
   static saveTask(todo) {
     if (this.getAllTasks().length !== 0) {
@@ -61,4 +59,11 @@ export  class CRUD {
     }
     return [];
   }
+
+  
+  static updateTask =(newDatas)=> {
+    localStorage.clear();
+    localStorage.setItem('data', JSON.stringify(newDatas));
+  }
+ 
 }
