@@ -2,18 +2,15 @@
 import _ from 'lodash'; /*eslint-disable*/
 import './style.css';
 import { CRUD } from './Assets/CRUD.js';
-
 const taskContainer = document.getElementById('task-container');
 const submitButton = document.getElementById('addButton');
 const clearAllDone = document.getElementById('clearComplete');
 let editButtonStats=false;
-
 window.onload = function windowReady() {
   CRUD.showTask();
   submitButton.onclick = function () {
     CRUD.createTask();
   };
-
   taskContainer.addEventListener('click', (e) => {
     if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
       if (e.target.className === 'checkbox-class') {
@@ -21,7 +18,6 @@ window.onload = function windowReady() {
         const description = document.getElementById('d' + ids);
         const data = CRUD.getAllTasks();
         const index = parseInt(ids, 10);
-
         if (data !== []) {
           if (data[index].completed) {
             data[index].completed = false;
@@ -36,7 +32,6 @@ window.onload = function windowReady() {
     }
   });
 // ! EDTING 
-
    taskContainer.addEventListener('click', (e) => {
     if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
       if (e.target.className === 'editButton') {
@@ -46,25 +41,23 @@ window.onload = function windowReady() {
         console.log(data);
         const index = parseInt(ids, 10);
         let editInput = document.getElementById('edit-'+ ids);
-
+        description.style.display='none';
+        editInput.style.display='block';
         if (editButtonStats !== false) {
           data[index].description=editInput.value;
-          description.style.display='none';
-          editInput.style.display='block';
-          CRUD.updateTask(data);
-          editButtonStats = false;
-         
-        }else{
-          editButtonStats = true;
           description.style.display='block';
           editInput.style.display='none';
+          CRUD.updateTask(data);
+          CRUD.showTask();
+          editButtonStats = false;
+        }else{
+          editButtonStats = true;
         }
       }
     }
-   
   });
+  //! REMOVING
   CRUD.showTask();
-
   taskContainer.addEventListener('click', (e) => {
     if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
       if (e.target.className === 'deleteButton') {
@@ -77,7 +70,7 @@ window.onload = function windowReady() {
       }
     }
   });
-
+  
   clearAllDone.addEventListener('click',(e)=>{
    const data= CRUD.getAllTasks();
    const storage=data.filter((todo)=>todo.completed===false);
@@ -85,6 +78,6 @@ window.onload = function windowReady() {
      storage[i].index=i+1;
    }
    CRUD.updateTask(storage);
+   CRUD.showTask();
   })
-
 };

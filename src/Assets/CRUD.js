@@ -40,8 +40,6 @@ export  class CRUD {
     }
   }
 
-	
-
   static saveTask(todo) {
     if (this.getAllTasks().length !== 0) {
       localStorage.setItem(
@@ -60,7 +58,6 @@ export  class CRUD {
     return [];
   }
 
-  
   static updateTask =(newDatas)=> {
     localStorage.clear();
     localStorage.setItem('data', JSON.stringify(newDatas));
