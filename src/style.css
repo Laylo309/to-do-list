@@ -5,12 +5,18 @@
   color: #545862;
 }
 
+body {
+  width: 31.2vw;
+  margin-left: 30vw;
+}
+
 .input {
   display: flex;
   align-items: center;
   height: 3rem;
-  padding-left: 1.2rem;
-  border-bottom: 1px solid #ddd;
+  padding-left: 0.2rem;
+  border: 1px solid #ddd;
+  justify-content: space-between;
 }
 
 .input2 {
@@ -87,11 +93,6 @@ ul li {
   margin: 0;
 }
 
-ul {
-  width: 480px;
-  margin: auto;
-}
-
 #addButton {
   background: url('https://img.icons8.com/ios/20/000000/enter-2.png');
   background-repeat: no-repeat;
@@ -123,4 +124,8 @@ ul {
   border: none;
   height: 35px;
   background-color: #fff;
+}
+
+.task-container {
+  max-width: 40%;
 }
