@@ -1,31 +1,40 @@
 /*eslint-disable*/
 import _ from 'lodash'; /*eslint-disable*/
 import './style.css';
-import Interaction from './Assets/interaction.js';
-import allTasks from './Assets/allTasks.js';
+import { CRUD } from './Assets/CRUD.js';
 
-document.querySelector('#addButton').addEventListener('click', () => {
-  Interaction.addTask();
-});
+const taskContainer = document.getElementById('task-container');
+const submitButton = document.getElementById('addButton');
+window.onload = function windowReady() {
+  submitButton.onclick = function () {
+    CRUD.createTask();
+    
+  }; 
 
-document.querySelector('#formText').addEventListener('submit', () => {
-  Interaction.addTask();
-});
 
-const checkInput = () => {
-  const data = JSON.parse(localStorage.getItem('data'));
-  let newData = [];
-  if (data !== null) {
-    allTasks.startTasks(data);
-    for (let i = 0; i < data.length; i += 1) {
-      if (Interaction.hasValue(data[i])) {
-        Interaction.updateList(data[i]);
+  taskContainer.addEventListener('click', (e) => {
+    if (e.target !== null && e.target !== 'NaN' && e.target !== '') {
+      if (e.target.className === 'checkbox-class') {
+        const ids = e.target.id.replace('checkbox-', '');
+        const description = document.getElementById('d' + ids);
+        const data = CRUD.getAllTasks();
+        const index = parseInt(ids, 10);
+
+        if (data !== []) {
+          if (data[index].completed) {
+            data[index].completed = false;
+            description.style.textDecoration = 'none';
+          } else {
+            data[index].completed = true;
+            description.style.textDecoration = 'line-through';
+          }
+          CRUD.updateTask(data);
+        }
+        console.log(data[index].completed);
       }
-      newData.push(data[i]);
     }
-
-    localStorage.setItem('data', JSON.stringify(allTasks.allTasks));
-  }
+  });
+ 
 };
 
-checkInput();
+CRUD.showTask();
