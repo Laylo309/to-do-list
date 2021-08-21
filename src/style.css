@@ -52,7 +52,6 @@ input:focus {
 }
 
 #clearComplete {
-  width: 480px;
   height: 50px;
   background: #ddd;
   display: flex;
