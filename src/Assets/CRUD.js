@@ -2,7 +2,6 @@
 export  class CRUD {
   static createTask() {
     const inputData = document.getElementById('inputText').value;
-    console.log(inputData);
     const saveData = document.getElementById('formText');
     const storage = this.getAllTasks().length;
     const task = [{ description: inputData, completed: false, index: storage }];

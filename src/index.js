@@ -38,7 +38,6 @@ window.onload = function windowReady() {
         const ids = e.target.id.replace('editBttn-', '');
         let description = document.getElementById('d' + ids);
         let data = CRUD.getAllTasks();
-        console.log(data);
         const index = parseInt(ids, 10);
         let editInput = document.getElementById('edit-'+ ids);
         description.style.display='none';
