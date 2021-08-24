@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO list</title>
+  <script defer src="/index.bundle.js"></script></head>
+  <body>
+    <h1>To Do list</h1>
+    <div id="task-container">
+      <ul>
+        <li class="input">
+          <h2 onchange="">Today's To Do</h2>
+          <img
+            src="https://img.icons8.com/windows/32/000000/synchronize.png"
+            alt="synchronize-button"
+          />
+        </li>
+        <li class="input2">
+          <form class="input"  id="formText" action="#">
+            <input
+              type="text"
+              id="inputText"
+              placeholder="Add to your list..."
+            >
+            <button type="button" id="addButton"></button>
+          </form>
+        </li> 
+      </ul>
+    <div id="clearComplete">
+      <p>Clear all completed</p>
+    </div>
+  </div>
+  </body>
+</html>
