@@ -6,7 +6,7 @@
 
 ## Live Demo 
 
-[Live Demo Link - TO DO list]()
+[Live Demo Link - TO DO list](https://laylo309.github.io/to-do-list/)
 
 ## Built With 
 
