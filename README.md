@@ -16,6 +16,16 @@
 - Visual Studio Code
 - Git & Github
 
+
+## Getting Started
+
+- I have used HTML CSS and JavaScript in the webpack environment.
+- I've included linters to improve and cleaning all of my code.
+
+### Prerequisites
+
+- IDE to edit and run the code (I use Visual Studio Code 🔥).
+
 ### Install
 
 To get a local copy up and running follow these simple example steps.
@@ -26,21 +36,14 @@ To get a local copy up and running follow these simple example steps.
 - Open `index.html` from `src` folder in your local browser or using Live Server in Visual Studio Code.
 - To install this project run `npm install`.
 - To run the project use the command `npm start`
-## Getting Started
 
-- I have used HTML CSS and JavaScript in the webpack environment.
-- I've included linters to improve and cleaning all of my code.
-
-### Prerequisites
-
-- IDE to edit and run the code (I use Visual Studio Code 🔥).
 ## Author
 
 👤 **Laylo Khodjaeva**
 
-- GitHub: [@Laylooo](https://github.com/Laylooo)
-- Twitter: [@laylo](https://twitter.com/home?lang=en)
-- LinkedIn: [Laylo](https://www.linkedin.com/in/laylo-khodjaeva-05a972207/)
+- GitHub: [Laylo309](https://github.com/Laylo309)
+- Twitter: [laylo](https://twitter.com/laylo_khodjaeva)
+- LinkedIn: [Laylo](https://www.linkedin.com/in/laylo-khodjaeva)
 
 ## 🤝 Contributing
 
